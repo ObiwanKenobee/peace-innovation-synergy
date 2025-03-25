@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,17 +35,17 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <a href="#" className="flex items-center">
+        <Link to="/" className="flex items-center">
           <span className="text-2xl font-bold text-gradient mr-1">VITE</span>
           <span className="text-sm font-light text-vite-slate">Platform</span>
-        </a>
+        </Link>
         
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
-          <a href="#features" className="nav-link">Features</a>
-          <a href="#vision" className="nav-link">Vision</a>
-          <a href="#" className="nav-link">Governance</a>
-          <a href="#" className="nav-link">Technology</a>
+          <Link to="/dashboard" className="nav-link">Dashboard</Link>
+          <Link to="/marketplace" className="nav-link">Marketplace</Link>
+          <Link to="/governance" className="nav-link">Governance</Link>
+          <Link to="/profile" className="nav-link">Profile</Link>
           <button className="button-primary">Join the Movement</button>
         </div>
         
@@ -62,34 +63,34 @@ const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white absolute top-full left-0 right-0 shadow-lg animate-fade-in">
           <div className="flex flex-col py-4 px-6 space-y-4">
-            <a 
-              href="#features" 
+            <Link 
+              to="/dashboard" 
               className="nav-link py-2" 
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Features
-            </a>
-            <a 
-              href="#vision" 
+              Dashboard
+            </Link>
+            <Link 
+              to="/marketplace" 
               className="nav-link py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Vision
-            </a>
-            <a 
-              href="#" 
+              Marketplace
+            </Link>
+            <Link 
+              to="/governance" 
               className="nav-link py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Governance
-            </a>
-            <a 
-              href="#" 
+            </Link>
+            <Link 
+              to="/profile" 
               className="nav-link py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Technology
-            </a>
+              Profile
+            </Link>
             <button 
               className="button-primary w-full flex justify-center"
               onClick={() => setIsMobileMenuOpen(false)}
